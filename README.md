@@ -1,16 +1,13 @@
-## Hi there 👋
+# Hi，我是 Mike
 
-<!--
-**a0936480350/a0936480350** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+目前在學習與實作 C#、ASP.NET Core MVC、Web API、WinForms 與 SQL。
 
-Here are some ideas to get you started:
+## 作品入口
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+
+## 技術方向
+- C#
+- ASP.NET Core MVC
+- Web API
+- SQL
+- WinForms
