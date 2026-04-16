@@ -50,7 +50,7 @@
 
 ## 🎓 技術深度
 
-### 後端（專業領域）
+### 後端
 - **C#** — OOP、LINQ、async/await、泛型、委派/事件
 - **ASP.NET Core** — MVC、Web API、Minimal API、SignalR、Middleware、DI 容器
 - **EF Core** — Code First、Migration、效能優化、N+1 處理
@@ -62,11 +62,11 @@
 - **遊戲開發** — Phaser.js 3（2D 遊戲引擎）
 - **即時通訊** — SignalR Client（WebSocket）
 
-### 架構思維（面試重點）
+### 架構思維
 - **SOLID 原則** — 單一職責、開閉、里氏替換、介面隔離、依賴反轉
 - **設計模式** — Repository、Strategy、Factory、Observer、Decorator
-- **系統設計** — 認證機制（Session/JWT/OAuth）、快取策略、微服務 vs 單體
-- **測試策略** — 測試金字塔、Mock vs 真實依賴
+- **系統設計** — 認證機制（Session/JWT/OAuth）、快取策略
+- **測試策略** — Mock vs 真實依賴
 
 ### DevOps
 - **Azure** — App Service、PostgreSQL Flexible Server、部署自動化
