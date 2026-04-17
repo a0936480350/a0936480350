@@ -89,8 +89,9 @@
 
 ### DevOps
 - **Azure** — App Service、PostgreSQL Flexible Server、SQL Database
-- **Git** — 分支策略、Rebase vs Merge、團隊協作
-- **CI/CD** — GitHub Actions 基礎
+- **Git** — 分支策略、Rebase vs Merge、團隊協作、SourceTree GUI
+- **CI/CD** — GitHub Actions 自動部署、Cron Job 排程、Secrets 管理
+- **自動化** — 從 `git push` 到正式站上線全程無人工介入
 
 ---
 
@@ -119,6 +120,7 @@
 | **ADO.NET 直接操作** | CarMaintenanceApp、GuitarSurvey |
 | **EF Core** | DevLearn |
 | **硬體整合** | CarMaintenanceApp (Bluetooth) |
+| **CI/CD 自動化** | DevLearn (GitHub Actions → Azure) |
 
 ---
 
