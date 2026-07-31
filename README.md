@@ -1,10 +1,12 @@
 <!--
-  GitHub profile README · 2026-04-22 update
+  GitHub profile README · 2026-07-31 update
   ─────────────────────────────────────────
   This version preserves Mike's existing structure (DevLearn /
   CarMaintenance / Japanese / side projects all kept) and only
   refreshes the LeadFlow headline section to match reality after
-  M4.08 → M4.22 ship.
+  three more months of shipped work (teacher invite links, 3-way
+  session completion confirmation, onboarding flow guide, and a
+  round of bug fixes/hardening).
 
   Deploy flow:
   1. Open https://github.com/a0936480350/a0936480350 (the profile repo)
@@ -46,14 +48,16 @@
 
 **☁️ 部署：** Azure App Service Linux + PostgreSQL Flexible Server · Bicep 一鍵 IaC · GitHub Actions 自動 CI/CD + smoke check · Auto-migrate on startup
 
-**📊 規模：** M1–M4.22 · **281+** commits · **24** Domain entities · **31** EF migrations · **43** Application services · **35** Controllers · **116** Views · **47** xUnit tests 全綠 · **11** RFC 決策文件
+**📊 規模：** M1–M4.30+ · **570+** commits · **35** Domain entities · **30+** EF migrations · **48** Application services · **55** Controllers · **165** Views · **60+** xUnit tests 全綠 · **18** RFC 決策文件
 
 **✨ 核心功能（都已上線）：**
 - 🗓️ 排課日曆（30 分鐘格 · 衝堂偵測 · 批次排課 · 教室資源）
 - 🧾 堂數管理（預約式扣堂 · 缺席 3 政策 · 補課期限 · 套餐生命週期 RFC 0009）
+- ✅ 三方課堂完成確認（老師 / 學生・家長各自標記，教室最終確認才計入薪資，教室永遠保有最終確認權）
 - 💰 老師薪資（三種抽成模式 · 已上完 vs 預估分開 · CSV 匯出）
-- 👨‍👩‍👧 家長 Portal（LINE 綁定登入 · 課表 · 堂數 · 歷史月報 · 一鍵請假）
+- 👨‍👩‍👧 家長 Portal（LINE 綁定登入 · 課表 · 堂數 · 歷史月報 · 一鍵請假 · 完成確認）
 - 👩‍🏫 老師 Portal（獨立帳號 · 今日課表 · 打卡 · 空堂時間表 · 我的薪資）
+- ✉️ 老師邀請免 Email 加入（連結手動分享，接受時再補真實 Email，降低教室導入門檻）
 - 📧 自動通知（學習筆記 email · 課前 24 小時提醒 · 每月學習報告自動生成 · 公開官網 lead 即時通知，可開關）
 - 🔴 未讀 Lead 導覽列 badge（24 小時窗口自動淡出，不用手動推進 stage）
 - 💳 線上訂閱（綠界 ECPay V5 · 月/季/年付 · 過期自動降級）
@@ -61,8 +65,24 @@
 - 🎨 白牌官網（3 版型 · 表單直通後台 · Tenant 自訂品牌色 / Logo · 老師 / 課程 / 場地照片渲染 · Google 地圖導航）
 - 📸 照片上傳（老師 / 學生 / 課程 / 教室場地 · Azure 持久化儲存 · 公開頁 + 列表 + 詳情多處顯示）
 - 📎 筆記教材附件（PDF 樂譜 / 作業照片 · 10MB/檔 · 多檔批次上傳 · 圖片預覽 + PDF 下載）
+- 📘 三端快速操作流程指南（教室老闆 / 老師 / 學生・家長，內建 Help 頁）
 
 **🤖 特色：** 兩個 AI agent（Claude + Codex）平行開發，靠 `.agents/` 資料夾自助協作，零訊息轉述 · RFC-first 決策流程 · 每次 push 自動跑測試 + Smoke check
+
+---
+
+### 🇯🇵 Nihon-Dev — 台灣工程師日本求職平台
+
+獨立設計並開發的 Blazor Server 全端平台，幫台灣工程師準備日本求職（履歷格式、技術日文、面試流程）。
+
+**🌐 Live:** [nihon-dev-20260419.azurewebsites.net](https://nihon-dev-20260419.azurewebsites.net)
+
+**🛠️ 技術棧：** Blazor Server · EF Core · PostgreSQL · Google Gemini API · 綠界 ECPay · GitHub Actions → Azure App Service
+
+**✨ 重點：**
+- 會員系統、內容管理、多角色權限（學員 / 老師 / 管理員）
+- 串接 Google Gemini API 做 AI 詞彙解釋，含多模型 quota 自動 fallback、cookie-based rate limiting（免費 / 付費方案分流）
+- 100+ 篇日本 IT 求職相關教材內容
 
 ---
 
@@ -78,39 +98,49 @@
 
 ---
 
-### 🚗 [CarMaintenanceApp — 車輛保養管理系統](https://github.com/a0936480350/CarMaintenanceApp)
+### 📖 資安工程學習書系（個人著作 · 11 冊 · 93 章）
 
-WPF 桌面應用，完整實作前後台分離的車輛保養紀錄管理系統。真實業務需求。
+從網路基礎一路寫到 AI 資安，自己整理的系統化資安工程教材（個人著作，未公開發布）：
 
-**亮點：** 前後台分離 · Azure SQL · LiveCharts 圖表 · Bluetooth 硬體整合 · Session 管理
-
-**技術：** C# · WPF · ADO.NET · 32feet.NET
-
----
-
-### 🎸 [GuitarSurvey — 吉他教學問卷網站](https://github.com/a0936480350/GuitarSurvey)
-
-ASP.NET Core Razor Pages 作品，吉他課程學員報名問卷系統。
-
-**亮點：** Razor Pages · Model Binding · 參數化 SQL 查詢 · 表單驗證
-
-**技術：** ASP.NET Core 8 · Razor Pages · SQL Server · Bootstrap
+1. 電腦與網路基礎
+2. Linux 系統基礎與實作
+3. Docker 與容器化
+4. Kubernetes 與編排
+5. Cloud（AWS / Azure / GCP）
+6. Cybersecurity 基礎與防禦
+7. Wireshark 與封包分析實戰
+8. DevSecOps 與自動化安全
+9. AI 與資安交集
+10. 綜合實戰與職涯
+11. VPS 手動部署與 AWS IaC 實戰
 
 ---
 
-### 🇯🇵 [JapaneseGames — 日文學習小遊戲](https://github.com/a0936480350/JapaneseGames)
+### 🧩 Xian Knowledge OS — 個人工程作業系統
 
-兩款 WinForms 日文學習工具：單字記憶遊戲 + 互動問答。從自身日語學習需求出發做的工具。
+讓多個開發專案共用標準、決策記錄與經驗，不再各自為政的底層系統（個人使用，架構方法論）：
 
-**亮點：** WinForms · 500+ 內建題庫 · 外部題庫擴充 · 兩版本漸進改善
+| 資料夾 | 作用 |
+|---|---|
+| `standards/` | 命名規範、文件格式、安全基準、寫作風格 |
+| `templates/` | 新專案起始樣板 |
+| `knowledge/` | 跨專案總覽、依賴關係圖、長期規劃 |
+| `decisions/` | 跨專案重大決策紀錄（ADR） |
+| `engineering-log/` | 除錯與工程經驗累積 |
+| `prompts/` · `mcp/` | AI 協作標準流程 |
 
-**技術：** C# · WinForms · .NET 8
+核心原則：兩個專案會重複用到的東西放共用層統一維護，需要專案自己事實才能填的內容留在各自專案。
 
 ---
 
-### 📂 [SideProjects](https://github.com/a0936480350/SideProjects) & [practice-work](https://github.com/a0936480350/practice-work)
+### 📂 其他練習作品
 
-日常練習與小型專案集合，記錄學習歷程。
+較早期的練習專案，技術棧與規模都比較小，列出來記錄學習歷程：
+
+- 🚗 [CarMaintenanceApp](https://github.com/a0936480350/CarMaintenanceApp) — WPF 桌面應用，車輛保養紀錄管理，前後台分離 + Bluetooth 硬體整合
+- 🎸 [GuitarSurvey](https://github.com/a0936480350/GuitarSurvey) — ASP.NET Core Razor Pages，吉他課程報名問卷
+- 🇯🇵 [JapaneseGames](https://github.com/a0936480350/JapaneseGames) — WinForms 日文學習小遊戲兩款
+- [SideProjects](https://github.com/a0936480350/SideProjects) & [practice-work](https://github.com/a0936480350/practice-work) — 日常練習與小型專案集合
 
 ---
 
@@ -157,11 +187,15 @@ ASP.NET Core Razor Pages 作品，吉他課程學員報名問卷系統。
 - **WinForms** — 事件驅動、GDI+、控制項自訂
 - **硬體整合** — Bluetooth (32feet.NET)、Serial Port
 
+### 行動開發
+
+- **iOS** — SwiftUI、Storyboard（學習中）
+
 ### 架構思維
 
 - **Clean Architecture** — Domain / Application / Infrastructure / Web 嚴格分層
 - **SOLID 原則** + **設計模式** — Repository、Strategy、Factory、Observer、Decorator
-- **RFC-first** — 重大決策先寫設計文件（`.agents/rfc/` 12 個 RFC）再動手
+- **RFC-first** — 重大決策先寫設計文件（`.agents/rfc/` 18 個 RFC）再動手
 - **系統設計** — 認證機制（Session/JWT/OAuth/Identity）、快取策略、微服務 vs 單體
 - **可觀測性** — Serilog 結構化日誌、RFC 7807 Problem Details、healthcheck endpoints
 - **測試策略** — xUnit + WebApplicationFactory 整合測試（InMemory DB + 可切換 ITenantContext）
@@ -222,6 +256,8 @@ ASP.NET Core Razor Pages 作品，吉他課程學員報名問卷系統。
 
 > 歡迎到 [DevLearn 網站](https://devlearn-dotnet.azurewebsites.net/) 看完整內容！
 
+**目前自學中：** RAG（檢索增強生成）、向量資料庫、模型訓練基礎理論 — 還在打底階段，尚未有正式上線的 LLM/RAG 產品。
+
 ---
 
 ## 📬 聯絡方式
@@ -236,4 +272,4 @@ ASP.NET Core Razor Pages 作品，吉他課程學員報名問卷系統。
 
 ⭐ 如果你覺得 LeadFlow 或 DevLearn 有幫助，歡迎在 GitHub 給個 Star！
 
-<sub>📝 最後更新 2026-04-23 · LeadFlow 從 M2 走到 M4.22 全部閉環（金流 / 家長 Portal / 月報 / 課前提醒 / Feature Flag / 照片系統 / Lead email 通知 / 24h badge / 課程封面 / 教室場地照片 + Google 地圖導航 / 筆記 PDF + 圖片附件全上線）</sub>
+<sub>📝 最後更新 2026-07-31 · LeadFlow 持續迭代中（三方課堂完成確認 / 老師免 Email 邀請連結 / 三端操作流程指南 / 570+ commits · 18 RFC 決策文件）</sub>
