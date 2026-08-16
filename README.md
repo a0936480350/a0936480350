@@ -18,7 +18,7 @@
 
 全端工程師 + **10 年音樂老師** + **6 年日本與在台日商業務**  
 主力 C# / ASP.NET Core / PostgreSQL，擅長把真實業務需求變成可上線、可長期營運的產品。  
-2026 年起延伸到 **iOS（Swift + Vision）** 與 **瀏覽器端訊號處理**，做「用鏡頭與麥克風即時判斷動作對錯」的教學工具。
+2026 年 8月起延伸到 **iOS（Swift + Vision）** 與 **瀏覽器端訊號處理**，做「用鏡頭與麥克風即時判斷動作對錯」的教學工具。
 
 ![C#](https://img.shields.io/badge/C%23_12-239120?style=flat-square&logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET_8-512BD4?style=flat-square&logo=dotnet&logoColor=white)
