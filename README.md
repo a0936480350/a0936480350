@@ -183,7 +183,6 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 - 🚗 [CarMaintenanceApp](https://github.com/a0936480350/CarMaintenanceApp) — WPF 桌面應用，車輛保養紀錄管理，前後台分離 + Bluetooth 硬體整合
 - 🎸 [GuitarSurvey](https://github.com/a0936480350/GuitarSurvey) — ASP.NET Core Razor Pages，吉他課程報名問卷
 - 🇯🇵 [JapaneseGames](https://github.com/a0936480350/JapaneseGames) — WinForms 日文學習小遊戲兩款
-- [SideProjects](https://github.com/a0936480350/SideProjects) & [practice-work](https://github.com/a0936480350/practice-work) — 日常練習與小型專案集合
 
 ---
 
