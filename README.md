@@ -1,5 +1,5 @@
 <!--
-  GitHub profile README · 2026-07-31 update
+  GitHub profile README · 2026-08-16 update
   ─────────────────────────────────────────
   This version preserves Mike's existing structure (DevLearn /
   CarMaintenance / Japanese / side projects all kept) and only
@@ -16,8 +16,9 @@
 
 ## 👋 Hi, I'm Mike
 
-物流系統開發工程師 + **10 年音樂老師** + **6 年日本與在台日商業務** + 持續轉型全端 SaaS 開發  
-主要使用 C# / ASP.NET Core / PostgreSQL，擅長把真實業務需求變成可上線、可長期營運的產品。
+全端工程師 + **10 年音樂老師** + **6 年日本與在台日商業務**  
+主力 C# / ASP.NET Core / PostgreSQL，擅長把真實業務需求變成可上線、可長期營運的產品。  
+2026 年起延伸到 **iOS（Swift + Vision）** 與 **瀏覽器端訊號處理**，做「用鏡頭與麥克風即時判斷動作對錯」的教學工具。
 
 ![C#](https://img.shields.io/badge/C%23_12-239120?style=flat-square&logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET_8-512BD4?style=flat-square&logo=dotnet&logoColor=white)
@@ -27,6 +28,10 @@
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![SignalR](https://img.shields.io/badge/SignalR-512BD4?style=flat-square&logo=dotnet&logoColor=white)
+![Swift](https://img.shields.io/badge/Swift_5-FA7343?style=flat-square&logo=swift&logoColor=white)
+![Vision](https://img.shields.io/badge/Apple_Vision-000000?style=flat-square&logo=apple&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-0097A7?style=flat-square&logo=google&logoColor=white)
+![Web Audio](https://img.shields.io/badge/Web_Audio_API-FF6F00?style=flat-square&logo=javascript&logoColor=white)
 ![WPF](https://img.shields.io/badge/WPF-0078D4?style=flat-square&logo=windows&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
@@ -36,11 +41,11 @@
 
 ## 🌟 作品集（點進去看完整介紹）
 
-### 🚀 [LeadFlow.SaaS — 教務管理中台（音樂 / 才藝 / 補教）](https://github.com/a0936480350/LeadFlow.SaaS) · 現役旗艦
+### 🚀 [LeadFlow.SaaS — 教務管理中台（音樂 / 才藝 / 補教）](https://leadflow-mike-tw.azurewebsites.net/) · 現役旗艦
 
 把教室的「**招生 → 官網 → 排課 → 點名 → 堂數 → 薪資 → 家長通知 → 月報 → 線上收費**」全打通的多租戶 SaaS。第一個客戶就是我自己的音樂教室（dogfooding 中）。
 
-**🌐 Live:** [leadflow-mike-tw.azurewebsites.net](https://leadflow-mike-tw.azurewebsites.net/)
+**🌐 Live:** [leadflow-mike-tw.azurewebsites.net](https://leadflow-mike-tw.azurewebsites.net/)　·　原始碼私有（商業產品）
 
 **🛠️ 技術棧：** ASP.NET Core 8 MVC · EF Core 8 · PostgreSQL 16 (Npgsql) · ASP.NET Core Identity · LINE Login (manual OAuth2) · MailKit + Gmail SMTP · 綠界 ECPay (SHA256 V5) · Tailwind + Preline · FullCalendar.js 6 · Serilog · xUnit
 
@@ -48,7 +53,7 @@
 
 **☁️ 部署：** Azure App Service Linux + PostgreSQL Flexible Server · Bicep 一鍵 IaC · GitHub Actions 自動 CI/CD + smoke check · Auto-migrate on startup
 
-**📊 規模：** M1–M4.30+ · **570+** commits · **35** Domain entities · **30+** EF migrations · **48** Application services · **55** Controllers · **165** Views · **60+** xUnit tests 全綠 · **18** RFC 決策文件
+**📊 規模：** M1–M4.30+ · **577** commits · **35** Domain entities · **30+** EF migrations · **48** Application services · **55** Controllers · **165** Views · **60+** xUnit tests 全綠 · **17** RFC 決策文件
 
 **✨ 核心功能（都已上線）：**
 - 🗓️ 排課日曆（30 分鐘格 · 衝堂偵測 · 批次排課 · 教室資源）
@@ -83,6 +88,44 @@
 - 會員系統、內容管理、多角色權限（學員 / 老師 / 管理員）
 - 串接 Google Gemini API 做 AI 詞彙解釋，含多模型 quota 自動 fallback、cookie-based rate limiting（免費 / 付費方案分流）
 - 100+ 篇日本 IT 求職相關教材內容
+
+---
+
+### 🏋️ [ElasticBandCoach — 給長輩的坐姿彈力帶教練](https://github.com/a0936480350/elastic-band-coach) · iOS / Mac
+
+給爸爸做的。鏡頭偵測骨架 → 算關節角度 → 判斷姿勢標不標準 → 畫面跳大字＋語音講出來要修哪裡。
+**全程在裝置上運算，影像不儲存、不上傳、不需要網路。**
+
+**🛠️ 技術棧：** Swift · UIKit · Apple Vision（`VNDetectHumanBodyPoseRequest` 19 點骨架）· AVFoundation · AVSpeechSynthesizer · My Mac (Designed for iPad)
+
+**📊 規模：** 30 個 Swift 檔 · 2,906 行 · 8 個動作定義 · 一週三天課表
+
+**✨ 幾個刻意的設計：**
+- **所有量測除以肩寬正規化** —— 人靠近或退後鏡頭，判斷數值都不會跑掉
+- **一次只講一句話** —— 同時給三個指令長輩會直接放棄，所以只播報最該修的那條
+- **示範火柴人由關節角度即時繪製**，不用網路影片 —— 示範與評分永遠是同一份定義，不可能走鐘，也沒有版權問題
+- 內建模擬人偶，**不用鏡頭也能先看一遍**判斷長什麼樣（第一次拿給長輩看很好用）
+
+---
+
+### 🎸 [Guitar Coach — 吉他練習即時回饋](https://github.com/a0936480350/guitar-coach) · Web
+
+**🌐 Live:** [a0936480350.github.io/guitar-coach](https://a0936480350.github.io/guitar-coach/)
+
+聽你彈得對不對、看你姿勢對不對，再出題考你的耳朵。純前端，**沒有後端、沒有資料庫，影像與聲音不離開裝置**。
+
+**🛠️ 技術棧：** Web Audio API（FFT / chroma / YIN 音高偵測 / Karplus-Strong 撥弦合成）· MediaPipe HandLandmarker · 單應性變換（指板座標對應）· Canvas · 原生 ES modules 零框架
+
+**✨ 功能：** 和弦偵測（33 個和弦三段可選）· 單音 Solo 偵測 · 聽力測驗（音程 / 和弦進行級數 / 和弦組成 / 和弦種類，範圍可複選）· 五線譜 ↔ TAB 切換 · 調音器（誤差 < 1 音分）· 節拍器（三/五/六連音細分）· 鼓機 8 風格 · Full Band 伴奏（6 曲風 × 12 key）· 左手姿勢與指板校準
+
+**🧪 工程重點 —— 沒有樂器也能驗證演算法：**
+DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**（含泛音、刷弦時間差、撥弦衰減）
+直接餵進辨識器，所以改動後跑 `npm test` 就知道有沒有壞，不用每次拿起吉他。
+**10 支測試**涵蓋和弦辨識、幾何運算、音高偵測、題目產生、樂譜、節奏、指板換算、伴奏樂理，
+外加一支「走鐘守衛」擋住兩份程式碼定義不一致。
+
+**⚠️ 也寫清楚它做不到什麼：** 分不出把位與轉位、某些和弦（如 Asus4 與 Dsus2）音級完全相同原理上不可分、
+視覺分不出「按下去」與「懸空」。這些不是還沒做，是用這個方法做不到 —— 與其假裝會，不如講明白。
 
 ---
 
@@ -189,13 +232,28 @@
 
 ### 行動開發
 
-- **iOS** — SwiftUI、Storyboard（學習中）
+- **iOS / Swift** — UIKit、Storyboard、Auto Layout（四約束比例式版面）、AVFoundation 相機管線
+- **Apple Vision** — `VNDetectHumanBodyPoseRequest` 骨架偵測、on-device 推論、每點 confidence 處理遮擋
+- **AVSpeechSynthesizer** — 語音教練提示
+- **My Mac (Designed for iPad)** — Apple Silicon 上直接跑 iOS target（模擬器的 `AVCaptureDevice` 一律回 nil，相機測不了）
+
+### 電腦視覺 / 音訊訊號處理
+
+跨 iOS 與 Web 兩個平台做「即時判斷人做得對不對」的教學工具：
+
+- **姿態偵測** — Apple Vision 19 點（iOS）· MediaPipe HandLandmarker 21 點（Web）
+- **幾何判斷** — 三點夾角、向量投影、**除以身體基準正規化**（肩寬 / 掌緣），讓判斷不受相機距離與角度影響
+- **單應性變換** — 四點校準求 3×3 投影矩陣，把畫面座標換算成指板座標（含琴衍非線性間距 `1 - 2^(-n/12)`）
+- **頻域分析** — FFT → chroma 十二音級能量 → 餘弦相似度比對和弦範本
+- **時域分析** — YIN 基頻偵測（累積平均正規化差分壓八度錯誤）＋ 拋物線內插達到 < 1 音分精度
+- **音訊合成** — Karplus-Strong 撥弦物理模型、回饋延遲網路殘響、Web Audio 時間軸精準排程（實測抖動 0ms）
+- **無硬體測試** — 用合成訊號驗證演算法，不需要樂器或鏡頭就能跑回歸測試
 
 ### 架構思維
 
 - **Clean Architecture** — Domain / Application / Infrastructure / Web 嚴格分層
 - **SOLID 原則** + **設計模式** — Repository、Strategy、Factory、Observer、Decorator
-- **RFC-first** — 重大決策先寫設計文件（`.agents/rfc/` 18 個 RFC）再動手
+- **RFC-first** — 重大決策先寫設計文件（`.agents/rfc/` 17 個 RFC）再動手
 - **系統設計** — 認證機制（Session/JWT/OAuth/Identity）、快取策略、微服務 vs 單體
 - **可觀測性** — Serilog 結構化日誌、RFC 7807 Problem Details、healthcheck endpoints
 - **測試策略** — xUnit + WebApplicationFactory 整合測試（InMemory DB + 可切換 ITenantContext）
@@ -244,6 +302,10 @@
 | 金流整合 | LeadFlow (ECPay V5) |
 | OAuth2 手刻 | LeadFlow (LINE Login) |
 | CI/CD 自動化 | LeadFlow (Bicep + GH Actions) · DevLearn (GH Actions → Azure) |
+| iOS / Swift | ElasticBandCoach (Vision 骨架偵測) |
+| 電腦視覺 | ElasticBandCoach (Apple Vision) · Guitar Coach (MediaPipe) |
+| 數位訊號處理 | Guitar Coach (FFT / chroma / YIN / Karplus-Strong) |
+| 純前端零後端 | Guitar Coach (GitHub Pages) |
 
 ---
 
@@ -255,6 +317,13 @@
 - **概念深入篇**（28 章）— 面試常考的觀念：DI、async、REST、系統設計
 
 > 歡迎到 [DevLearn 網站](https://devlearn-dotnet.azurewebsites.net/) 看完整內容！
+
+**2026 年的新方向：** 從純 Web 後端延伸到 **on-device 電腦視覺與訊號處理** ——
+用鏡頭與麥克風即時判斷人做得對不對，全部在裝置上運算、不上傳。
+`ElasticBandCoach`（iOS/Vision）與 `Guitar Coach`（Web/MediaPipe + Web Audio）是這條線的兩個實作。
+
+做完兩個之後得到一個結論並寫進 ADR：**這類產品的護城河不是偵測技術**（Vision 與 MediaPipe 都免費、
+開箱即用），**而是「什麼角度算錯、錯了要講哪一句」** —— 那需要領域教學經驗，不是寫程式能生出來的。
 
 **目前自學中：** RAG（檢索增強生成）、向量資料庫、模型訓練基礎理論 — 還在打底階段，尚未有正式上線的 LLM/RAG 產品。
 
@@ -272,4 +341,4 @@
 
 ⭐ 如果你覺得 LeadFlow 或 DevLearn 有幫助，歡迎在 GitHub 給個 Star！
 
-<sub>📝 最後更新 2026-07-31 · LeadFlow 持續迭代中（三方課堂完成確認 / 老師免 Email 邀請連結 / 三端操作流程指南 / 570+ commits · 18 RFC 決策文件）</sub>
+<sub>📝 最後更新 2026-08-16 · 新增 ElasticBandCoach（iOS · Apple Vision 骨架偵測）與 Guitar Coach（Web · MediaPipe + Web Audio DSP）· LeadFlow 577 commits / 17 RFC 持續迭代中</sub>
