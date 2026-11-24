@@ -43,6 +43,22 @@
 
 ---
 
+## 🧭 AI 時代，我怎麼做東西：AI × Idea × Know-how
+
+AI 讓寫程式變快很多，但它不會告訴你該做什麼、做出來的東西對不對。我的每個作品都是這三樣一起用：
+
+| | 負責什麼 | 在我作品裡的例子 |
+|---|---|---|
+| 🤖 **AI** | **做得快**：寫程式、跑測試、自動化重複的事 | [LeadFlow](https://leadflow-mike-tw.azurewebsites.net/) 用 Claude Code + Codex 兩個 agent 平行開發 · [MiniERP](https://drive.google.com/file/d/1KUesihFiWWZQ7r_gwuo4S2xW3K5p8uAv/view) 由 Playwright 自動操作整個流程 |
+| 💡 **Idea** | **做什麼**：從真實的人和問題出發 | [LeadFlow](https://leadflow-mike-tw.azurewebsites.net/) 來自我自己音樂教室的排課、堂數、薪資問題 · [ElasticBandCoach](https://github.com/a0936480350/elastic-band-coach) 是做給爸爸用的復健教練 |
+| 🎓 **Know-how** | **做得對**：什麼算錯、錯了要講哪一句 | 十多年吉他教學寫成兩本書：[《爵士其實只有一件事》](https://www.books.com.tw/products/E050361509)、[《玩音樂不被音樂玩》](https://www.books.com.tw/products/E050361508) · [Guitar Coach](https://a0936480350.github.io/guitar-coach/) 的判斷規則就來自這些教學經驗 |
+
+做完 ElasticBandCoach 和 Guitar Coach 之後，我得到的結論是：骨架偵測、音高偵測這些技術都是免費、現成的，誰都拿得到。
+真正難的是判斷「哪個角度算錯、錯了先提醒哪一個」，這要靠在現場教過很多人才知道。
+AI 是每個人都有的工具，Idea 和 Know-how 要靠自己的經歷累積，這是我想在作品裡展示的部分。
+
+---
+
 ## 🌟 作品集（點進去看完整介紹）
 
 ### 🚀 [LeadFlow.SaaS — 教務管理中台（音樂 / 才藝 / 補教）](https://leadflow-mike-tw.azurewebsites.net/) · 現役旗艦
@@ -395,4 +411,4 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 
 ⭐ 如果你覺得 LeadFlow 或 DevLearn 有幫助，歡迎在 GitHub 給個 Star！
 
-<sub>📝 最後更新 2026-11-25 · 新增已出版音樂著作（博客來）、AI 協作與 AI 應用</sub>
+<sub>📝 最後更新 2026-11-25 · 新增 AI × Idea × Know-how、已出版音樂著作（博客來）、AI 協作與 AI 應用</sub>
