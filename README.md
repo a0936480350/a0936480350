@@ -16,7 +16,7 @@
 
 ## 👋 Hi, I'm Mike
 
-全端工程師 + **10 年音樂老師** + **6 年日本與在台日商業務**  
+全端工程師 + **10 年音樂老師** + **6 年日本與在台日商業務** + **吉他教材作者**  
 主力 C# / ASP.NET Core / PostgreSQL，擅長把真實業務需求變成可上線、可長期營運的產品。  
 2026 年 8月起延伸到 **iOS（Swift + Vision）** 與 **瀏覽器端訊號處理**，做「用鏡頭與麥克風即時判斷動作對錯」的教學工具。
 
@@ -35,6 +35,8 @@
 ![WPF](https://img.shields.io/badge/WPF-0078D4?style=flat-square&logo=windows&logoColor=white)
 ![Vue](https://img.shields.io/badge/Vue_3-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![Claude Code](https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white)
+![Gemini API](https://img.shields.io/badge/Gemini_API-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
@@ -162,6 +164,23 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 
 ---
 
+### 🎼 音樂著作 · 吉他教材書
+
+內容來自我 10 年教學、400+ 堂課整理出來的 138 堂講義。
+
+| 書名 | 內容 | 狀態 |
+|---|---|---|
+| **《爵士，其實只有一件事》**<br>副標《一條半音線》 | 爵士吉他教材，353 頁 | 已簽電子書出版合約（滾石移動），上架準備中 |
+| **《爵士，其實只有一件事 · 附錄樂句》** | 配套樂句集，五線譜＋TAB 對照 | 完稿 |
+| **《玩音樂，不被音樂玩》** | 吉他基礎到曲風實戰，17 個 Part，226 頁 | 完稿，投稿評估中 |
+
+**🛠️ 製作方式也是工程：** 譜例、和弦圖、指板圖都由 Python 程式產生，再用自動檢查把關 ——
+五線譜和 TAB 逐音比對音高、每個和弦按法驗證手指按得到、每頁頁碼都打開 PDF 檢查。改一次程式整本重建，不靠人工校對抓漏。
+
+另外用 Suno AI 製作並發行了演奏專輯《小賢的異想世界》（17 首），經營 YouTube「小賢的音樂教學分享」。
+
+---
+
 ### 📖 資安工程學習書系（個人著作 · 11 冊 · 93 章）
 
 從網路基礎一路寫到 AI 資安，自己整理的系統化資安工程教材（個人著作，未公開發布）：
@@ -269,6 +288,16 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 - **音訊合成** — Karplus-Strong 撥弦物理模型、回饋延遲網路殘響、Web Audio 時間軸精準排程（實測抖動 0ms）
 - **無硬體測試** — 用合成訊號驗證演算法，不需要樂器或鏡頭就能跑回歸測試
 
+### AI 協作與 AI 應用
+
+- **Claude Code + Codex 平行開發** — 兩個 agent 各自開 branch，靠 `.agents/` 資料夾交接任務與 RFC，不用我在中間轉述（LeadFlow）
+- **把 AI 產出當成要驗收的程式碼** — 每個 AI 改動都要過測試、E2E 或自動檢查才算數；自己寫檢查器抓「看起來對、其實沒做」的靜默失敗
+- **LLM API 串接** — Google Gemini API，多模型 quota 用完自動切換、依付費方案限流（Nihon-Dev）
+- **MCP / 工具串接** — 讓 AI agent 直接操作 Google Drive、Gmail、GitHub、瀏覽器，做檔案歸檔、上傳、整理
+- **瀏覽器自動化** — Playwright 腳本操作整個系統流程並錄影（MiniERP）
+- **AI 音樂** — Suno AI 創作與發行專輯；用 basic-pitch 把 MP3 轉成吉他譜（GP5）做練習曲
+- **Prompt 與工作流程標準化** — 共用的 prompt 範本、決策記錄（ADR）、跨專案經驗庫（Xian Knowledge OS）
+
 ### 架構思維
 
 - **Clean Architecture** — Domain / Application / Infrastructure / Web 嚴格分層
@@ -301,7 +330,8 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 | 部署 | Azure App Service · Bicep IaC · Auto-migrate |
 | 觀測 | Serilog · Healthcheck endpoints |
 | 金流 | 綠界 ECPay AioCheckOut V5 |
-| AI 協作 | Claude Code + Codex（兩個 agent 平行協作） |
+| AI 協作 | Claude Code + Codex（兩個 agent 平行協作）· MCP 工具串接 |
+| AI API / 工具 | Google Gemini API · Suno AI · basic-pitch |
 
 ---
 
@@ -329,6 +359,8 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 | E2E 自動化測試 | MiniERP (Playwright) |
 | SQL Server 預存程序 / 交易 | MiniERP |
 | 純前端零後端 | Guitar Coach (GitHub Pages) |
+| 程式化出版 | 吉他教材書（Python 產生譜例 + 自動驗證） |
+| LLM API 串接 | Nihon-Dev (Gemini API) |
 
 ---
 
@@ -364,4 +396,4 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 
 ⭐ 如果你覺得 LeadFlow 或 DevLearn 有幫助，歡迎在 GitHub 給個 Star！
 
-<sub>📝 最後更新 2026-11-24 · 新增 MiniERP（ASP.NET Core 8 Web API + Vue 3 + SQL Server · Playwright 端對端自動化）</sub>
+<sub>📝 最後更新 2026-11-25 · 新增音樂著作、AI 協作與 AI 應用</sub>
