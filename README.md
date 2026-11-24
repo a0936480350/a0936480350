@@ -50,7 +50,7 @@ AI 讓寫程式變快很多，但它不會告訴你該做什麼、做出來的�
 | | 負責什麼 | 在我作品裡的例子 |
 |---|---|---|
 | 🤖 **AI** | **做得快**：寫程式、跑測試、自動化重複的事 | [LeadFlow](https://leadflow-mike-tw.azurewebsites.net/) 用 Claude Code + Codex 兩個 agent 平行開發 · [MiniERP](https://drive.google.com/file/d/1KUesihFiWWZQ7r_gwuo4S2xW3K5p8uAv/view) 由 Playwright 自動操作整個流程 |
-| 💡 **Idea** | **做什麼**：從真實的人和問題出發 | [LeadFlow](https://leadflow-mike-tw.azurewebsites.net/) 來自我自己音樂教室的排課、堂數、薪資問題 · [ElasticBandCoach](https://github.com/a0936480350/elastic-band-coach) 是做給爸爸用的復健教練 |
+| 💡 **Idea** | **做什麼**：從真實的人和問題出發 | [LeadFlow](https://leadflow-mike-tw.azurewebsites.net/) 來自我自己音樂教室的排課、堂數、薪資問題 · [ElasticBandCoach](https://github.com/a0936480350/elastic-band-coach) 是做給爸爸用的坐姿彈力帶運動教練 |
 | 🎓 **Know-how** | **做得對**：什麼算錯、錯了要講哪一句 | 十多年吉他教學寫成兩本書：[《爵士其實只有一件事》](https://www.books.com.tw/products/E050361509)、[《玩音樂不被音樂玩》](https://www.books.com.tw/products/E050361508) · [Guitar Coach](https://a0936480350.github.io/guitar-coach/) 的判斷規則就來自這些教學經驗 |
 
 做完 ElasticBandCoach 和 Guitar Coach 之後，我得到的結論是：骨架偵測、音高偵測這些技術都是免費、現成的，誰都拿得到。
