@@ -33,6 +33,8 @@
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-0097A7?style=flat-square&logo=google&logoColor=white)
 ![Web Audio](https://img.shields.io/badge/Web_Audio_API-FF6F00?style=flat-square&logo=javascript&logoColor=white)
 ![WPF](https://img.shields.io/badge/WPF-0078D4?style=flat-square&logo=windows&logoColor=white)
+![Vue](https://img.shields.io/badge/Vue_3-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![Bicep](https://img.shields.io/badge/Bicep-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
@@ -129,6 +131,25 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 
 ---
 
+### 📦 [MiniERP — 前後端分離進銷存系統](https://drive.google.com/file/d/1KUesihFiWWZQ7r_gwuo4S2xW3K5p8uAv/view) · Web API + Vue 3 · Playwright E2E
+
+**🎬 [Playwright 自動化操作影片（58 秒，全程沒有人工點擊）](https://drive.google.com/file/d/1KUesihFiWWZQ7r_gwuo4S2xW3K5p8uAv/view)**　·　原始碼整理中，近期公開
+
+一套跑在本機的小型 ERP：銷售、採購、庫存、客戶、供應商、報表。前端和後端是兩個獨立程式，只透過 JSON API 溝通。示範資料都是虛構的。
+
+**🛠️ 技術棧：** ASP.NET Core 8 Web API · EF Core 8 · SQL Server（檢視表 / 預存程序 / 計算欄位 / CHECK 約束）· JWT + 角色權限 · Vue 3 + Vite · Swagger · Playwright
+
+**✨ 幾個刻意的設計：**
+- **防超賣**：扣庫存用條件式 UPDATE（`WHERE StockQty >= 要扣的數量`），兩個人同時出貨也不會扣成負數，資料庫 CHECK 約束是第二道防線
+- **交易回滾**：一張單只要有一個品項庫存不足，整張都不出貨，前面已扣的庫存全部還原
+- **防重複操作**：狀態也用條件式更新，同一張單按兩次「出貨」第二次會被擋
+- **可追溯**：庫存不能直接改，所有變動都走入庫 / 出貨 / 盤點調整，每次都寫異動紀錄
+- **權限在後端把關**：一般人員就算繞過前端直接打刪除 API，也會回 403
+- **一鍵啟動**：第一次啟動自動建資料庫與半年份示範資料，自動偵測 localhost / SQLEXPRESS / LocalDB
+
+**🧪 測試：** 27 項 API 冒煙測試 · Playwright 端對端腳本跑完整流程並自動錄影（每一步都等畫面出現預期結果才往下走）
+
+---
 ### ⭐ [DevLearn — 程式設計學習平台](https://github.com/a0936480350/DevLearn)
 
 232 章教學、8 款遊戲化學習、老師媒合、即時聊天、AI 輔助開發。一個人獨立開發 1 個月。
@@ -255,7 +276,7 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 - **RFC-first** — 重大決策先寫設計文件（`.agents/rfc/` 17 個 RFC）再動手
 - **系統設計** — 認證機制（Session/JWT/OAuth/Identity）、快取策略、微服務 vs 單體
 - **可觀測性** — Serilog 結構化日誌、RFC 7807 Problem Details、healthcheck endpoints
-- **測試策略** — xUnit + WebApplicationFactory 整合測試（InMemory DB + 可切換 ITenantContext）
+- **測試策略** — Playwright 端對端自動化（MiniERP）· xUnit + WebApplicationFactory 整合測試（InMemory DB + 可切換 ITenantContext）
 - **安全性** — SQL Injection 防禦、XSS、CSRF、密碼雜湊、Tenant 跨界保護
 
 ### DevOps / Cloud
@@ -304,6 +325,9 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 | iOS / Swift | ElasticBandCoach (Vision 骨架偵測) |
 | 電腦視覺 | ElasticBandCoach (Apple Vision) · Guitar Coach (MediaPipe) |
 | 數位訊號處理 | Guitar Coach (FFT / chroma / YIN / Karplus-Strong) |
+| 前後端分離 REST API | MiniERP (Web API + Vue 3) |
+| E2E 自動化測試 | MiniERP (Playwright) |
+| SQL Server 預存程序 / 交易 | MiniERP |
 | 純前端零後端 | Guitar Coach (GitHub Pages) |
 
 ---
@@ -340,4 +364,4 @@ DSP 核心是純函式，不碰 DOM 也不碰麥克風。測試用**合成音**�
 
 ⭐ 如果你覺得 LeadFlow 或 DevLearn 有幫助，歡迎在 GitHub 給個 Star！
 
-<sub>📝 最後更新 2026-08-16 · 新增 ElasticBandCoach（iOS · Apple Vision 骨架偵測）與 Guitar Coach（Web · MediaPipe + Web Audio DSP）· LeadFlow 577 commits / 17 RFC 持續迭代中</sub>
+<sub>📝 最後更新 2026-11-24 · 新增 MiniERP（ASP.NET Core 8 Web API + Vue 3 + SQL Server · Playwright 端對端自動化）</sub>
